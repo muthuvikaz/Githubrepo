@@ -1,0 +1,43 @@
+//object
+ const profile = {
+   firstName: "Mut",
+   lastName: "Vik",
+   age: 23,
+   Family:{
+     fatherName: "Kum",
+     motherName: "Ind",
+     sisterName: "Akk",
+     grandmaName: "Saro"},
+     birthYear: function(){
+       return (new Date().getFullYear() - this.age)
+     },
+     fullName(){
+       return (this.firstName + this.lastName)  //new function
+   },
+   
+     entireName: function(){
+       return  `${this.firstName} ${this.lastName}` ; //old functon
+     }
+ }
+ 
+ const profileupdate = {
+   Status: "Single",
+   // fullName(){
+   //   return "${this.firstname}' '${this.lastname}"
+   // }
+ }
+ 
+ //merge object using Object.assign()
+ const entire = Object.assign(profile, profileupdate)
+
+console.log("merge using assign(): ",entire)
+
+//merge obkects using spread operator
+const spreadentire = {...profile,...profileupdate}
+console.log("Merge using spread: ",spreadentire)
+
+ 
+ console.log(profile.Family)
+ console.log(profile.Family.motherName)
+ console.log(profile.fullName())
+ console.log(profile.entireName())
